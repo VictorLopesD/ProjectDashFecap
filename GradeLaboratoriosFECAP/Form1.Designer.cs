@@ -1,5 +1,23 @@
-﻿namespace GradeLaboratoriosFECAP
+﻿using Microsoft.Graph;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Kiota.Http.HttpClientLibrary;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using Font = System.Drawing.Font;
+
+namespace GradeLaboratoriosFECAP
 {
+    internal class GradeItem
+    {
+        public string DiaSemana { get; internal set; } = "";
+        public string Horario { get; internal set; } = "";
+        public string Laboratorio { get; internal set; } = "";
+        public string Materia { get; internal set; } = "";
+        public string Professor { get; internal set; } = "";
+        public string Curso { get; internal set; } = "";
+    }
     partial class PanelSup
     {
         /// <summary>
@@ -31,11 +49,11 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             splitContainer1 = new SplitContainer();
-            radioButton5 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            Sexta_RB = new RadioButton();
+            Quinta_RB = new RadioButton();
+            Quarta_RB = new RadioButton();
+            Terca_RB = new RadioButton();
+            Segunda_RB = new RadioButton();
             listView1 = new ListView();
             tabControl2 = new TabControl();
             tabPage3 = new TabPage();
@@ -91,11 +109,11 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(radioButton5);
-            splitContainer1.Panel1.Controls.Add(radioButton3);
-            splitContainer1.Panel1.Controls.Add(radioButton4);
-            splitContainer1.Panel1.Controls.Add(radioButton2);
-            splitContainer1.Panel1.Controls.Add(radioButton1);
+            splitContainer1.Panel1.Controls.Add(Sexta_RB);
+            splitContainer1.Panel1.Controls.Add(Quinta_RB);
+            splitContainer1.Panel1.Controls.Add(Quarta_RB);
+            splitContainer1.Panel1.Controls.Add(Terca_RB);
+            splitContainer1.Panel1.Controls.Add(Segunda_RB);
             splitContainer1.Panel1.Controls.Add(listView1);
             // 
             // splitContainer1.Panel2
@@ -105,61 +123,62 @@
             splitContainer1.SplitterDistance = 113;
             splitContainer1.TabIndex = 0;
             // 
-            // radioButton5
+            // Sexta_RB
             // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(5, 95);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(92, 19);
-            radioButton5.TabIndex = 6;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "SEXTA-FEIRA";
-            radioButton5.UseVisualStyleBackColor = true;
+            Sexta_RB.AutoSize = true;
+            Sexta_RB.Location = new Point(5, 95);
+            Sexta_RB.Name = "Sexta_RB";
+            Sexta_RB.Size = new Size(93, 19);
+            Sexta_RB.TabIndex = 6;
+            Sexta_RB.TabStop = true;
+            Sexta_RB.Text = "SEXTA-FEIRA";
+            Sexta_RB.UseVisualStyleBackColor = true;
+            Sexta_RB.CheckedChanged += radioButton5_CheckedChanged;
             // 
-            // radioButton3
+            // Quinta_RB
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(5, 70);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(102, 19);
-            radioButton3.TabIndex = 5;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "QUINTA-FEIRA";
-            radioButton3.UseVisualStyleBackColor = true;
+            Quinta_RB.AutoSize = true;
+            Quinta_RB.Location = new Point(5, 70);
+            Quinta_RB.Name = "Quinta_RB";
+            Quinta_RB.Size = new Size(103, 19);
+            Quinta_RB.TabIndex = 5;
+            Quinta_RB.TabStop = true;
+            Quinta_RB.Text = "QUINTA-FEIRA";
+            Quinta_RB.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // Quarta_RB
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(5, 49);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(104, 19);
-            radioButton4.TabIndex = 4;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "QUARTA-FEIRA";
-            radioButton4.UseVisualStyleBackColor = true;
+            Quarta_RB.AutoSize = true;
+            Quarta_RB.Location = new Point(5, 49);
+            Quarta_RB.Name = "Quarta_RB";
+            Quarta_RB.Size = new Size(105, 19);
+            Quarta_RB.TabIndex = 4;
+            Quarta_RB.TabStop = true;
+            Quarta_RB.Text = "QUARTA-FEIRA";
+            Quarta_RB.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // Terca_RB
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(5, 24);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(95, 19);
-            radioButton2.TabIndex = 3;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "TERÇA-FEIRA";
-            radioButton2.UseVisualStyleBackColor = true;
+            Terca_RB.AutoSize = true;
+            Terca_RB.Location = new Point(5, 24);
+            Terca_RB.Name = "Terca_RB";
+            Terca_RB.Size = new Size(96, 19);
+            Terca_RB.TabIndex = 3;
+            Terca_RB.TabStop = true;
+            Terca_RB.Text = "TERÇA-FEIRA";
+            Terca_RB.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // Segunda_RB
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(5, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(113, 19);
-            radioButton1.TabIndex = 2;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "SEGUNDA-FEIRA";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            Segunda_RB.AutoSize = true;
+            Segunda_RB.Location = new Point(5, 3);
+            Segunda_RB.Name = "Segunda_RB";
+            Segunda_RB.Size = new Size(113, 19);
+            Segunda_RB.TabIndex = 2;
+            Segunda_RB.TabStop = true;
+            Segunda_RB.Text = "SEGUNDA-FEIRA";
+            Segunda_RB.UseVisualStyleBackColor = true;
+            Segunda_RB.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // listView1
             // 
@@ -217,7 +236,7 @@
             // 
             // SegHorarioNot
             // 
-            SegHorarioNot.Location = new Point(6, 189);
+            SegHorarioNot.Location = new Point(6, 186);
             SegHorarioNot.Name = "SegHorarioNot";
             SegHorarioNot.Size = new Size(649, 180);
             SegHorarioNot.TabIndex = 1;
@@ -326,11 +345,116 @@
         private GroupBox Lab106B;
         private Label InfoLab106;
         private GroupBox Lab200B;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton Terca_RB;
+        private RadioButton Segunda_RB;
         private ListView listView1;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
-        private RadioButton radioButton5;
+        private RadioButton Quinta_RB;
+        private RadioButton Quarta_RB;
+        private RadioButton Sexta_RB;
+        
+        
+        public async Task AtualizarGradeInterface()
+        {
+            try
+            {
+                string token = await GraphAuth.GetTokenAsync();
+
+                // 1. Encode da SharePoint sharing URL para o formato Graph API
+                string shareUrl = "https://edufecap.sharepoint.com/:x:/s/CdigosAnydesk-LaboratriosdeInformtica/IQDnq-xny6TqRpx4KNGO9vTQAejSoqSCz2RoiAWRKcv6iE8?e=AjsH2U";
+
+                string base64 = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(shareUrl))
+                    .TrimEnd('=')
+                    .Replace('+', '-')
+                    .Replace('/', '_');
+
+                string shareId = "u!" + base64;
+
+                // 2. Baixar o CSV via Graph API shares endpoint
+                using var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                var response = await httpClient.GetAsync(
+                    $"https://graph.microsoft.com/v1.0/shares/{shareId}/driveItem/content");
+
+                response.EnsureSuccessStatusCode();
+
+                using var stream = await response.Content.ReadAsStreamAsync();
+                using var reader = new StreamReader(stream);
+                string csvCompleto = await reader.ReadToEndAsync();
+
+                // 3. Processar Linhas (igual ao anterior)
+                var linhas = csvCompleto.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                string diaSelecionado = GetDiaSelecionado();
+
+                foreach (var linha in linhas.Skip(1))
+                {
+                    var col = linha.Split(',');
+                    if (col.Length < 5) continue;
+
+                    var item = new GradeItem
+                    {
+                        DiaSemana = col[0].Trim().ToLower(),
+                        Horario = col[1].Trim(),
+                        Laboratorio = col[2].Trim().Replace(" ", ""),
+                        Materia = col[3].Trim(),
+                        Professor = col[4].Trim()
+                    };
+
+                    if (item.DiaSemana == diaSelecionado)
+                    {
+                        bool isNoturno = Regex.IsMatch(item.Horario, @"^(19|20|21|22)");
+                        if (isNoturno)
+                            DistribuirParaLabels(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar grade: " + ex.Message);
+            }
+        
+        }
+
+        // Verifica qual RadioButton está marcado
+        private string GetDiaSelecionado()
+        {
+            if (Segunda_RB.Checked) return "segunda";
+            if (Terca_RB.Checked) return "terça";
+            if (Quarta_RB.Checked) return "quarta";
+            if (Quinta_RB.Checked) return "quinta";
+            if (Sexta_RB.Checked) return "sexta";
+            return "";
+        }
+    
+
+    private void DistribuirParaLabels(GradeItem item)
+        {
+            // Tenta encontrar pelo nome exato vindo do CSV (ex: InfoLab106B)
+            string nomeLabel = "InfoLab" + item.Laboratorio;
+            var label = this.Controls.Find(nomeLabel, true).FirstOrDefault() as Label;
+
+            if (label != null)
+            {
+                label.Text = $"{item.Materia}\n{item.Professor}";
+            }
+            else
+            {
+                // Fallback: se o laboratório for "106B" e o label se chamar apenas "InfoLab106"
+                if (item.Laboratorio.StartsWith("106"))
+                {
+                    InfoLab106.Text = $"{item.Materia}\n{item.Professor}";
+                }
+            }
+        }
+        }
+
+
+
+
+public class AnonymousAuthenticationProvider : IAuthenticationProvider
+    {
+        public Task AuthenticateRequestAsync(RequestInformation request, Dictionary<string, object>? additionalAuthenticationContext = null, CancellationToken cancellationToken = default)
+            => Task.CompletedTask;
     }
 }

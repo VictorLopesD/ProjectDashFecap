@@ -13,5 +13,7 @@ namespace GradeLaboratoriosFECAP
             ApplicationConfiguration.Initialize();
             Application.Run(new PanelSup());
         }
+
+
     }
 }
