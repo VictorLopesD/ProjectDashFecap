@@ -178,7 +178,7 @@ namespace GradeLaboratoriosFECAP
             Segunda_RB.TabStop = true;
             Segunda_RB.Text = "SEGUNDA-FEIRA";
             Segunda_RB.UseVisualStyleBackColor = true;
-            Segunda_RB.CheckedChanged += radioButton1_CheckedChanged;
+            Segunda_RB.CheckedChanged += Segunda_RB_CheckedChanged;
             // 
             // listView1
             // 
