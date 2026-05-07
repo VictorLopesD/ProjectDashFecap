@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42BE5D0D-50A1-4B66-A102-B82330FD5E19}|GradeLaboratoriosFECAP.csproj|c:\\users\\38581182810\\documents\\github\\projectdashfecap\\gradelaboratoriosfecap\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{42BE5D0D-50A1-4B66-A102-B82330FD5E19}|GradeLaboratoriosFECAP.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42BE5D0D-50A1-4B66-A102-B82330FD5E19}|GradeLaboratoriosFECAP.csproj|c:\\users\\38581182810\\documents\\github\\projectdashfecap\\gradelaboratoriosfecap\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42BE5D0D-50A1-4B66-A102-B82330FD5E19}|GradeLaboratoriosFECAP.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42BE5D0D-50A1-4B66-A102-B82330FD5E19}|GradeLaboratoriosFECAP.csproj|c:\\users\\38581182810\\documents\\github\\projectdashfecap\\gradelaboratoriosfecap\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42BE5D0D-50A1-4B66-A102-B82330FD5E19}|GradeLaboratoriosFECAP.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42BE5D0D-50A1-4B66-A102-B82330FD5E19}|GradeLaboratoriosFECAP.csproj|c:\\users\\38581182810\\documents\\github\\projectdashfecap\\gradelaboratoriosfecap\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42BE5D0D-50A1-4B66-A102-B82330FD5E19}|GradeLaboratoriosFECAP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\Form1.cs [Projeto]",
+              "RelativeToolTip": "Form1.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T15:23:41.161Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAADwv5YAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T14:30:52.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T15:10:33.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\38581182810\\Documents\\GitHub\\ProjectDashFecap\\GradeLaboratoriosFECAP\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T13:27:11.334Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
